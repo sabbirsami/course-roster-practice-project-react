@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import Course from "./Course";
+import PropTypes from "prop-types";
 
-function Courses() {
+Courses.propTypes = {
+    handleSelectCourse: PropTypes.func.isRequired,
+};
+
+function Courses({ handleSelectCourse }) {
     const [courses, setCourses] = useState([]);
-    console.log(courses);
     useEffect(() => {
         fetch("courses.json")
             .then((res) => res.json())
@@ -12,7 +16,11 @@ function Courses() {
     return (
         <div className="grid grid-cols-3 gap-6">
             {courses.map((course, idx) => (
-                <Course key={idx} course={course}></Course>
+                <Course
+                    key={idx}
+                    course={course}
+                    handleSelectCourse={handleSelectCourse}
+                ></Course>
             ))}
         </div>
     );
