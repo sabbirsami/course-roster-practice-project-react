@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../../../assets/logo.png";
 import { GoArrowRight } from "react-icons/go";
 
 function Header() {
