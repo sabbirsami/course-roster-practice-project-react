@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Introduction to OOP Python",
+        "img": "https://i.ibb.co/ZdZpGQX/Rectangle-2.png",
+        "price": 49.99,
+        "description": "Learn the basics of programming with this introductory course.",
+        "credit": 3
+    },
+    {
+        "name": "Database (MySQL)",
+        "img": " https://i.ibb.co/60D21KT/Rectangle-2-1.png",
+        "price": 59.99,
+        "description": "A comprehensive guide to building websites and web applications.",
+        "credit": 4
+    },
+    {
+        "name": "Introduction to C Programming",
+        "img": "https://i.ibb.co/p3BSdBj/Rectangle-2-2.png",
+        "price": 79.99,
+        "description": "Explore the world of data science and analytics in this course.",
+        "credit": 5
+    },
+    {
+        "name": "Introduction to Algorithms",
+        "img": "https://i.ibb.co/y0f920Q/Rectangle-2-3.png",
+        "price": 99.99,
+        "description": "Master the art of machine learning with hands-on projects.",
+        "credit": 5
+    },
+    {
+        "name": "Introduction to C++ for DSA",
+        "img": "https://i.ibb.co/DVj40s9/Rectangle-2-4.png",
+        "price": 69.99,
+        "description": "Learn effective digital marketing strategies for businesses.",
+        "credit": 3
+    },
+    {
+        "name": "Software Engineering",
+        "img": "https://i.ibb.co/ZSVc8rN/Rectangle-2-5.png",
+        "price": 39.99,
+        "description": "Get started with graphic design and unleash your creativity.",
+        "credit": 2
+    },
+    {
+        "name": "Problem-Solving Part",
+        "img": "https://i.ibb.co/26H4sRB/Rectangle-2-6.png",
+        "price": 89.99,
+        "description": "Learn the principles of finance for better business decision-making.",
+        "credit": 4
+    },
+    {
+        "name": "Basic Data Structures",
+        "img": "https://i.ibb.co/HgrcPHT/Rectangle-3.png",
+        "price": 79.99,
+        "description": "Capture stunning photos with this comprehensive photography course.",
+        "credit": 3
+    },
+    {
+        "name": "AWS, Cloud Computing",
+        "img": "https://i.ibb.co/BVWxQb6/Rectangle-3-1.png",
+        "price": 119.99,
+        "description": "Explore AI applications in the healthcare industry.",
+        "credit": 5
+    }
+]
