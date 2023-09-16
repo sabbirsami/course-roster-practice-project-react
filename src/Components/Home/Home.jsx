@@ -22,9 +22,7 @@ const Home = () => {
             document.getElementById("my_modal_3").showModal();
         } else {
             if (totalUsedCredit + selectedCourse.credit > 20) {
-                console.log(totalUsedCredit + selectedCourse.credit);
-                console.log(creditRemaining, totalUsedCredit);
-                return alert("2");
+                return document.getElementById("my_modal_2").showModal();
             } else {
                 const newSelectedCourse = [...selectCourses, selectedCourse];
                 setSelectCourses(newSelectedCourse);
@@ -55,6 +53,24 @@ const Home = () => {
                         <p className="text-red-500 py-6">
                             {" "}
                             You already select this course
+                        </p>
+                    </div>
+                </div>
+            </dialog>
+            <dialog id="my_modal_2" className="modal">
+                <div className="modal-box">
+                    <form method="dialog">
+                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                            ✕
+                        </button>
+                    </form>
+                    <div className="py-14 text-center">
+                        <h2 className="text-6xl ">
+                            <ImWarning className="w-full text-red-500" />
+                        </h2>
+                        <p className="text-red-500 py-6">
+                            {" "}
+                            You do not have enough credit
                         </p>
                     </div>
                 </div>
