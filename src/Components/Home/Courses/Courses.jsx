@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 
 Courses.propTypes = {
     handleSelectCourse: PropTypes.func.isRequired,
+    checkCredit: PropTypes.bool,
 };
 
-function Courses({ handleSelectCourse }) {
+function Courses({ handleSelectCourse, checkCredit }) {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
         fetch("courses.json")
@@ -20,6 +21,7 @@ function Courses({ handleSelectCourse }) {
                     key={idx}
                     course={course}
                     handleSelectCourse={handleSelectCourse}
+                    checkCredit={checkCredit}
                 ></Course>
             ))}
         </div>

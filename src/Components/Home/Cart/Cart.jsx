@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 
 Cart.propTypes = {
     selectCourses: PropTypes.array,
-    setCheckCredit: PropTypes.func,
+    handleCheckCredit: PropTypes.func,
 };
 
-function Cart({ selectCourses, setCheckCredit }) {
+function Cart({ selectCourses, handleCheckCredit }) {
     const totalCredit = selectCourses.reduce(
         (accumulator, currentValue) => accumulator + currentValue?.credit,
         0
@@ -16,7 +16,7 @@ function Cart({ selectCourses, setCheckCredit }) {
     );
     const creditRemaining = 20 - totalCredit;
     if (totalCredit > 20) {
-        setCheckCredit(true);
+        handleCheckCredit();
     }
 
     return (
