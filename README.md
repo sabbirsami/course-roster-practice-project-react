@@ -1,8 +1,8 @@
-# React + Vite
+    ## Project features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    1. Show clicked item in cart section.
+    2. User can't add same course multipal time.
+    3. When remaining credit is 0 user can't add anymore course in his/her cart
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    ## How I managed the state in my project.
+    I create a parent component where I fetch my data and save this data useing useState,  then I sent this data whare I needed. I do all changes in parent component so that I can sent data to child and make changes.
