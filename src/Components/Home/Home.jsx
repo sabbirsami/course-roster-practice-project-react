@@ -5,22 +5,36 @@ import { ImWarning } from "react-icons/im";
 
 const Home = () => {
     const [selectCourses, setSelectCourses] = useState([]);
-    const [checkCredit, setCheckCredit] = useState(false);
-    console.log(checkCredit);
+    const totalCredit = 20;
+
+    const totalUsedCredit = selectCourses.reduce(
+        (accumulator, currentValue) => accumulator + currentValue?.credit,
+        0
+    );
+    const creditRemaining = totalCredit - totalUsedCredit;
     const handleSelectCourse = (selectedCourse) => {
+        console.log(selectedCourse);
         const isExist = selectCourses.find(
             (item) => item.id === selectedCourse.id
         );
+
         if (isExist) {
             document.getElementById("my_modal_3").showModal();
         } else {
-            const newSelectedCourse = [...selectCourses, selectedCourse];
-            setSelectCourses(newSelectedCourse);
+            if (totalUsedCredit + selectedCourse.credit > 20) {
+                console.log(totalUsedCredit + selectedCourse.credit);
+                console.log(creditRemaining, totalUsedCredit);
+                return alert("2");
+            } else {
+                const newSelectedCourse = [...selectCourses, selectedCourse];
+                setSelectCourses(newSelectedCourse);
+            }
         }
     };
-    const handleCheckCredit = () => {
-        setCheckCredit(true);
-    };
+    const totalPrice = selectCourses.reduce(
+        (accumulator, currentValue) => accumulator + currentValue?.price,
+        0
+    );
 
     // console.log(selectCourse);
     return (
@@ -48,15 +62,14 @@ const Home = () => {
             <div className=" bg-base-200 py-16">
                 <div className="container mx-auto flex">
                     <div className="md:w-2/3 md:pe-6">
-                        <Courses
-                            handleSelectCourse={handleSelectCourse}
-                            checkCredit={checkCredit}
-                        />
+                        <Courses handleSelectCourse={handleSelectCourse} />
                     </div>
                     <div className="md:w-1/3 sticky top-0">
                         <Cart
+                            totalPrice={totalPrice}
+                            totalUsedCredit={totalUsedCredit}
+                            creditRemaining={creditRemaining}
                             selectCourses={selectCourses}
-                            handleCheckCredit={handleCheckCredit}
                         />
                     </div>
                 </div>

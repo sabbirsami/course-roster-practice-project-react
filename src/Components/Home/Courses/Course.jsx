@@ -2,11 +2,10 @@ import PropTypes from "prop-types";
 
 Course.propTypes = {
     course: PropTypes.object.isRequired,
-    checkCredit: PropTypes.bool,
     handleSelectCourse: PropTypes.func.isRequired,
 };
 
-function Course({ course, handleSelectCourse, checkCredit }) {
+function Course({ course, handleSelectCourse }) {
     const { name, img, description, price, credit } = course;
     return (
         <div className=" rounded-lg bg-base-100">
@@ -40,25 +39,12 @@ function Course({ course, handleSelectCourse, checkCredit }) {
                     <p>Credit: {credit}</p>
                 </div>
                 <div className="items-end ">
-                    {checkCredit ? (
-                        <button
-                            onClick={() =>
-                                document
-                                    .getElementById("my_modal_5")
-                                    .showModal()
-                            }
-                            className="btn btn-primary w-full"
-                        >
-                            Select
-                        </button>
-                    ) : (
-                        <button
-                            onClick={() => handleSelectCourse(course)}
-                            className="btn btn-primary w-full"
-                        >
-                            Select
-                        </button>
-                    )}
+                    <button
+                        onClick={() => handleSelectCourse(course)}
+                        className="btn btn-primary w-full"
+                    >
+                        Select
+                    </button>
                 </div>
             </div>
         </div>

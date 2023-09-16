@@ -2,23 +2,12 @@ import PropTypes from "prop-types";
 
 Cart.propTypes = {
     selectCourses: PropTypes.array,
-    handleCheckCredit: PropTypes.func,
+    creditRemaining: PropTypes.number,
+    totalUsedCredit: PropTypes.number,
+    totalPrice: PropTypes.number,
 };
 
-function Cart({ selectCourses, handleCheckCredit }) {
-    const totalCredit = selectCourses.reduce(
-        (accumulator, currentValue) => accumulator + currentValue?.credit,
-        0
-    );
-    const totalPrice = selectCourses.reduce(
-        (accumulator, currentValue) => accumulator + currentValue?.price,
-        0
-    );
-    const creditRemaining = 20 - totalCredit;
-    if (totalCredit > 20) {
-        handleCheckCredit();
-    }
-
+function Cart({ selectCourses, creditRemaining, totalUsedCredit, totalPrice }) {
     return (
         <div>
             <div className="bg-base-100 py-6 rounded-lg p-4">
@@ -34,7 +23,7 @@ function Cart({ selectCourses, handleCheckCredit }) {
                     ))}
                 </ol>
                 <hr className="py-3 mt-3" />
-                <p>Total Credit Hour : {totalCredit}</p>
+                <p>Total Credit Hour : {totalUsedCredit}</p>
                 <hr className="py-3 mt-3" />
                 <h1 className="font-semibold text-base pb-3">
                     Total Price : {totalPrice} TAKA
